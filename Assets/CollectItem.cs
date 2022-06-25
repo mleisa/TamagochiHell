@@ -7,7 +7,7 @@ public class CollectItem : MonoBehaviour
     {
         LightCharge flashlight = other.gameObject.GetComponent<LightCharge>();
         
-        if (other.gameObject.name == "Player" && flashlight != null)
+        if (other.gameObject.CompareTag("Player") && flashlight != null)
         {
             gameObject.SetActive(false);
             flashlight.ChargeUp();

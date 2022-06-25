@@ -3,32 +3,54 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public float maxRotation = 360;
+    private Rigidbody body;
+    public float speed;
+    public float jumpForce;
+    private float vertical;
+    private float horizontal;
+    private bool isGrounded;
+    Transform t;
 
-    private Rigidbody rb;
-
+    private void Awake()
+    {
+        t = transform;
+    }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        // Obtain the reference to our Rigidbody.
+        body = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (Input.GetAxisRaw("Jump") > 0 && isGrounded)
+        {
+            body.AddForce(t.up * jumpForce);
+        }
 
-        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput).normalized;
-        rb.MovePosition(rb.position + movement * (speed * Time.deltaTime));
-
-        // rb.position += verticalInput * transform.forward * Time.deltaTime * speed;
-        // rb.position += horizontalInput* transform.right * Time.deltaTime * speed;
+        Vector3 velocity = ((Vector3.forward * vertical) + (Vector3.right * horizontal)) * Time.fixedDeltaTime;
+        velocity = velocity.normalized * speed;
+        velocity.y = body.velocity.y;
+        body.velocity = velocity;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // This function is a callback for when an object with a collider collides with this objects collider.
+    void OnCollisionEnter(Collision collision)
     {
-        rb.velocity = Vector3.zero;
-        Debug.Log(gameObject.name);
+        if (collision.gameObject.CompareTag(("Ground")))
+        {
+            isGrounded = true;
+        }
+    }
+    // This function is a callback for when the collider is no longer in contact with a previously collided object.
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(("Ground")))
+        {
+            isGrounded = false;
+        }
     }
 }
