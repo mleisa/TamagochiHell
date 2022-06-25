@@ -36,8 +36,6 @@ public class Movement : MonoBehaviour
         velocity.y = body.velocity.y;
         body.velocity = velocity;
     }
-
-    // This function is a callback for when an object with a collider collides with this objects collider.
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(("Ground")))
@@ -45,7 +43,6 @@ public class Movement : MonoBehaviour
             isGrounded = true;
         }
     }
-    // This function is a callback for when the collider is no longer in contact with a previously collided object.
     void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag(("Ground")))
