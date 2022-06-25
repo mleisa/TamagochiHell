@@ -3,10 +3,10 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField]
-    private int currentHealth;
+    private float currentHealth;
     
     [SerializeField]
-    private int maxHealth = 100;
+    private float maxHealth = 100;
 
     [SerializeField]
     private HealthBar healthBar;
@@ -16,7 +16,7 @@ public class HealthSystem : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    public void TakeDamage(int number)
+    public void TakeDamage(float number)
     {
         currentHealth -= number;
         healthBar.SetHealth(currentHealth);
