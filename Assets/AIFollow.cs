@@ -1,18 +1,18 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AIFollow : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
+    private NavMeshAgent agent;
+    [SerializeField] private Transform target;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _rigidbody = gameObject.GetComponent<Rigidbody>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
-        _rigidbody.velocity = new Vector3(0, 0, 1) * (700 * Time.deltaTime);
+        agent.destination = target.position;
     }
 }
