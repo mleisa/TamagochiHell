@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -17,14 +14,6 @@ public class HealthSystem : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            TakeDamage(10);
-        }
     }
 
     public void TakeDamage(int number)
