@@ -1,4 +1,5 @@
 using System.Linq;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +10,7 @@ public class AIFollowPathing : MonoBehaviour
     private Transform[] _transform;
     [SerializeField] private int nodeIndex = 0;
 
-    void Start()
+    void OnEnable()
     {
         GameObject[] paths = GameObject.FindGameObjectsWithTag("Path");
 
@@ -31,7 +32,7 @@ public class AIFollowPathing : MonoBehaviour
 
     private void Update()
     {
-        if (TargetReached())
+        if (agent.GetPathRemainingDistance() < 1)
         {
             nodeIndex++;
             if (nodeIndex >= _transform.Length)
@@ -39,14 +40,13 @@ public class AIFollowPathing : MonoBehaviour
                 nodeIndex = 0;
             }
             agent.destination = _transform[nodeIndex].position;
-            // Debug.Log(_transform[nodeIndex].gameObject.name);
         }
     }
 
-    public bool TargetReached()
-    {
-        Debug.Log(Vector3.Distance(transform.position, _transform[nodeIndex].position));
-        // return agent.destination.x == _transform[nodeIndex].position.x;
-        return Vector3.Distance(transform.position, _transform[nodeIndex].position) < 1;
-    }
+    // public bool TargetReached()
+    // {
+    //     // Debug.Log(Vector3.Distance(transform.position, _transform[nodeIndex].position));
+    //     // return agent.destination.x == _transform[nodeIndex].position.x;
+    //     return Vector3.Distance(transform.position, _transform[nodeIndex].position) < 1;
+    // }
 }
