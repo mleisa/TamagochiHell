@@ -1,18 +1,33 @@
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class AIFollow : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform target;
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    public void UpdateTarget(Transform newTarget)
     {
+        if (newTarget == null)
+        {
+            return;
+        }
+        
+        target = newTarget;
         agent.destination = target.position;
     }
+
+    public bool ReachedDestination()
+    {
+        return agent.GetPathRemainingDistance() < 1;
+    }
+
+
+
 }
