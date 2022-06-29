@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -10,10 +11,14 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private bool isGrounded;
     Transform t;
+    [SerializeField] private SphereCollider _collider;
+    [SerializeField] private float colliderExpansionSpeed = 1;
 
     private void Awake()
     {
         t = transform;
+        _collider = GetComponent<SphereCollider>();
+        _collider.radius = 0;
     }
 
     void Start()
@@ -26,6 +31,7 @@ public class Movement : MonoBehaviour
     {
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
+        
         if (Input.GetAxisRaw("Jump") > 0 && isGrounded)
         {
             body.AddForce(t.up * jumpForce);
@@ -35,7 +41,21 @@ public class Movement : MonoBehaviour
         velocity = velocity.normalized * speed;
         velocity.y = body.velocity.y;
         body.velocity = velocity;
+
+        if ((vertical != 0 || horizontal != 0) && _collider.radius <= 5)
+        {
+            _collider.radius += colliderExpansionSpeed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            if (_collider.radius >= 0)
+            {
+                _collider.radius -= colliderExpansionSpeed * Time.fixedDeltaTime;
+            }
+        }
     }
+
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(("Ground")))
