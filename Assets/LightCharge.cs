@@ -15,8 +15,11 @@ public class LightCharge : MonoBehaviour
 
     void Update()
     {
-        currentCharge -= decrease*Time.deltaTime;
-        healthBar.SetHealth(currentCharge);
+        if (currentCharge > 0)
+        {
+            currentCharge -= decrease * Time.deltaTime;
+            healthBar.SetHealth(currentCharge);
+        }
     }
 
     public void ChargeUp()

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,12 +7,14 @@ public class AIController : MonoBehaviour
     [SerializeField] private AIFollow aiFollow;
     private bool isChasing;
     [SerializeField] private FieldOfView fieldOfView;
+    [SerializeField] private FieldOfHearing fieldOfHearing;
 
     private void Start()
     {
         followPathing = GetComponent<AIFollowPathing>();
         aiFollow = GetComponent<AIFollow>();
         fieldOfView = GetComponent<FieldOfView>();
+        fieldOfHearing = GetComponent<FieldOfHearing>();
 
         followPathing.enabled = true;
         isChasing = false;
@@ -46,15 +47,23 @@ public class AIController : MonoBehaviour
 
     private void TargetCheckUp()
     {
-        var targets = fieldOfView.visibleTargets;
-        bool hasTargets = targets.Count > 0;
+        var targetsInSight = fieldOfView.visibleTargets;
+        var targetsInHearing = fieldOfHearing.noisyTargets;
+        bool seeTargets = targetsInSight.Count > 0;
+        bool hearTargets = targetsInHearing.Count > 0;
 
-        if (hasTargets)
+        if (seeTargets)
         {
-            aiFollow.UpdateTarget(targets[0]);
+            aiFollow.UpdateTarget(targetsInSight[0]);
             StartChase();
         }
-        else
+        else if (hearTargets)
+        {
+            Debug.Log("I hear (Controller)");
+            aiFollow.UpdateTarget(targetsInHearing[0]);
+            StartChase();
+
+        } else
         {
             aiFollow.UpdateTarget(null);
 
