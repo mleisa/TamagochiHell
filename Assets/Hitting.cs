@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Hitting : MonoBehaviour
@@ -6,6 +7,7 @@ public class Hitting : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         HealthSystem thing = collision.gameObject.GetComponent<HealthSystem>();
+
         if (thing != null && canHitAgain)
         {
             thing.TakeDamage(10);
