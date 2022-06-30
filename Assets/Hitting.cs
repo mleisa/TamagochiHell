@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Hitting : MonoBehaviour
 {
     private bool canHitAgain = true;
     [SerializeField] FightingSphere fightingSphere;
+    private List<GameObject> deadNarcs;
+    [SerializeField]  private float force = 1000;
 
     private void Awake()
     {
@@ -20,8 +23,9 @@ public class Hitting : MonoBehaviour
                 enemyHealth.TakeDamage(100);
                 if (enemyHealth.CurrentHealth <= 5)
                 {
-                    fightingSphere.removeNarc(narc);
-                    Destroy(narc);
+                    //fightingSphere.removeNarc(narc);
+                    narc.GetComponent<Rigidbody>().AddForce(new Vector3(0, force, 0));
+                    Debug.Log(narc + ": deaaaad");
                 }
             }
         }

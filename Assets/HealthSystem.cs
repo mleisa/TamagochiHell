@@ -16,7 +16,7 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         CurrentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        if (healthBar != null) healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(float number)

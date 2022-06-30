@@ -9,7 +9,6 @@ public class FightingSphere : MonoBehaviour
 
     public List<GameObject> Narcs { get => narcs; set => narcs = value; }
 
-
     private void OnTriggerEnter(Collider other)
     {
         Enemy enemy = other.GetComponent<Enemy>();
