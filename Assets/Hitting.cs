@@ -10,7 +10,7 @@ public class Hitting : MonoBehaviour
 
         if (thing != null && canHitAgain)
         {
-            thing.TakeDamage(10);
+            //thing.TakeDamage(10);
             canHitAgain = false;
         }
     }
