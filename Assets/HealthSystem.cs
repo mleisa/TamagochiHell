@@ -23,6 +23,5 @@ public class HealthSystem : MonoBehaviour
     {
         CurrentHealth -= number;
         if(healthBar != null) healthBar.SetHealth(CurrentHealth);
-        Debug.Log(CurrentHealth);
     }
 }
