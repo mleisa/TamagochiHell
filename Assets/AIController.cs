@@ -59,7 +59,6 @@ public class AIController : MonoBehaviour
         }
         else if (hearTargets)
         {
-            Debug.Log("I hear (Controller)");
             aiFollow.UpdateTarget(targetsInHearing[0]);
             StartChase();
 
