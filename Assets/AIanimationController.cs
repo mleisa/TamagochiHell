@@ -5,6 +5,7 @@ public class AIanimationController : MonoBehaviour
 {
     private Animator animator;
     private bool isWalking;
+    public bool canAttack = false;
     private NavMeshAgent _agent;
     [SerializeField] private FieldOfHearing fieldOfHearing;
 
@@ -21,7 +22,6 @@ public class AIanimationController : MonoBehaviour
         isWalking = _agent.velocity.magnitude > 0.15f;
         animator.SetBool("isWalking", isWalking);
         
-        var canAttack = fieldOfHearing.noisyTargets.Count != 0;
         animator.SetBool("canAttack", canAttack);
 
     }
