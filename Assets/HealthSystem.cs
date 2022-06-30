@@ -10,15 +10,19 @@ public class HealthSystem : MonoBehaviour
 
     [SerializeField]
     private HealthBar healthBar;
+
+    public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
+
     void Start()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(float number)
     {
-        currentHealth -= number;
-        healthBar.SetHealth(currentHealth);
+        CurrentHealth -= number;
+        if(healthBar != null) healthBar.SetHealth(CurrentHealth);
+        Debug.Log(CurrentHealth);
     }
 }

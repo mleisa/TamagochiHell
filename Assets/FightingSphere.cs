@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class FightingSphere : MonoBehaviour
 {
-    [SerializeField] private List<Enemy> narcs;
+    [SerializeField] private List<GameObject> narcs;
     [SerializeField] private HashSet<Enemy> narcSet;
 
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log(other.GetComponent<Enemy>());
+    public List<GameObject> Narcs { get => narcs; set => narcs = value; }
 
-    }
+
     private void OnTriggerEnter(Collider other)
     {
         Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null)
         {
-            narcSet.Add(enemy);
+            Narcs.Add(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -25,9 +23,13 @@ public class FightingSphere : MonoBehaviour
         Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null)
         {
-            narcSet.Remove(enemy);
+            removeNarc(other.gameObject);
         }
     }
 
+    public void removeNarc(GameObject narc)
+    {
+        Narcs.Remove(narc);
+    }
 
 }

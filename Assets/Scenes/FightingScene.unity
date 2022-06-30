@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 189147996}
   - component: {fileID: 189147995}
   - component: {fileID: 189148003}
+  - component: {fileID: 189148004}
   m_Layer: 0
   m_Name: Narc2
   m_TagString: Untagged
@@ -391,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bd2de8b3385b64cb92495b6f30e526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fightingSphere: {fileID: 0}
 --- !u!54 &189148001
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -435,6 +437,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482918e2ad5bf864fbe8a6b4baa20d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &189148004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189147994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1dd6c9bd07bf64abe21c1f8d8a4cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1 &220863889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +1952,7 @@ GameObject:
   - component: {fileID: 1525765624}
   - component: {fileID: 1525765623}
   - component: {fileID: 1525765631}
+  - component: {fileID: 1525765632}
   m_Layer: 0
   m_Name: Narc1
   m_TagString: Untagged
@@ -2039,6 +2057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bd2de8b3385b64cb92495b6f30e526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fightingSphere: {fileID: 0}
 --- !u!54 &1525765629
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2083,6 +2102,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482918e2ad5bf864fbe8a6b4baa20d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1525765632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525765622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1dd6c9bd07bf64abe21c1f8d8a4cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1001 &1545086462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2698,6 +2732,18 @@ PrefabInstance:
     - target: {fileID: 779596203846983598, guid: f577053569ca3de4fbeea53955c3b424, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859592240488091816, guid: f577053569ca3de4fbeea53955c3b424, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859592240488091816, guid: f577053569ca3de4fbeea53955c3b424, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859592240488091816, guid: f577053569ca3de4fbeea53955c3b424, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f577053569ca3de4fbeea53955c3b424, type: 3}
