@@ -27,7 +27,6 @@ public class AIFollowPathing : MonoBehaviour
         _transform = _transform.Skip(1).ToArray();
         
         agent.destination = _transform[nodeIndex].position;
-        Debug.Log(_transform[nodeIndex].gameObject.name);
     }
 
     private void Update()

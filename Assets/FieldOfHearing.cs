@@ -32,7 +32,6 @@ public class FieldOfHearing : MonoBehaviour {
 
         for (int i = 0; i < targetsInViewRadius.Length; i++) {
             Transform target = targetsInViewRadius[i].transform;
-            Debug.Log(target.name);
             noisyTargets.Add(target);
         }
     }

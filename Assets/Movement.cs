@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         t = transform;
-        _collider = GetComponent<SphereCollider>();
         _collider.radius = 0;
     }
 

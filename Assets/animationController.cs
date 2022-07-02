@@ -23,7 +23,7 @@ public class animationController : MonoBehaviour
         }
         
         isWalking = Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
-        //animator.SetBool("isWalking", isWalking);
+        
         animator.SetBool("isHitting", Input.GetMouseButtonDown(0));
 
         if (isWalking && velocity < 1.0f)
