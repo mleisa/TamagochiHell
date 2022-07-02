@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="70991c08-1635-4260-98b3-26a4d64273a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DogKnight/Prefab/DogPolyart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/DogKnight/Prefab/DogPolyart.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOVerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOVerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Game OVer.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Game OVer.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="Maze" />
       </map>
     </option>
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -27,12 +32,20 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="wet-walls" />
-                    <option name="lastUsedInstant" value="1656758999" />
+                    <option name="branchName" value="yeet" />
+                    <option name="lastUsedInstant" value="1656785728" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="Maze" />
+                    <option name="lastUsedInstant" value="1656785718" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1656758972" />
+                    <option name="lastUsedInstant" value="1656785711" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="wet-walls" />
+                    <option name="lastUsedInstant" value="1656758999" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="mixingMazeAndFight" />
@@ -79,7 +92,16 @@
       <workItem from="1656239423463" duration="1134000" />
       <workItem from="1656345374900" duration="27000" />
       <workItem from="1656785029303" duration="267000" />
+      <workItem from="1656786532267" duration="1681000" />
     </task>
+    <task id="LOCAL-00001" summary="yeet">
+      <created>1656785740188</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656785740188</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +122,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="yeet" />
+    <option name="LAST_COMMIT_MESSAGE" value="yeet" />
   </component>
 </project>

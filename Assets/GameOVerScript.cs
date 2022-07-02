@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameOVerScript : MonoBehaviour
+public class GameOverScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Retry()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
+        Debug.Log("nein");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("HALLO");
+            SceneManager.LoadScene("GG");
+        }
+          
+    } 
 }
+        
