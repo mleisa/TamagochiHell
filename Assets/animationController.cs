@@ -8,15 +8,25 @@ public class animationController : MonoBehaviour
     [SerializeField] private float acceleration = 1.0f;
     [SerializeField] private float deceleration = 1.5f;
     private int velocityHash;
+    private HealthSystem healthSystem;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         velocityHash = Animator.StringToHash("Velocity");
+        healthSystem = GetComponentInParent<HealthSystem>();
     }
 
     void Update()
     {
+
+        if (healthSystem.isDead)
+        {
+            animator.SetBool("isDead", healthSystem.isDead);
+            //enabled = false;
+        }
+        
+        
         if (velocity < 0.0f)
         {
             velocity = 0.0f;

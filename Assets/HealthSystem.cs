@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -11,6 +12,8 @@ public class HealthSystem : MonoBehaviour
     [SerializeField]
     private HealthBar healthBar;
 
+    public bool isDead = false;
+
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
     void Start()
@@ -21,7 +24,15 @@ public class HealthSystem : MonoBehaviour
 
     public void TakeDamage(float number)
     {
-        CurrentHealth -= number;
-        if(healthBar != null) healthBar.SetHealth(CurrentHealth);
+        if (currentHealth > 0)
+        {
+            CurrentHealth -= number;
+            if(healthBar != null) healthBar.SetHealth(CurrentHealth);
+        }
+
+        if (currentHealth == 0)
+        {
+            isDead = true;
+        }
     }
 }
