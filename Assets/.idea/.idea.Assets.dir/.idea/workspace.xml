@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70991c08-1635-4260-98b3-26a4d64273a2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DogKnight/Prefab/DogPolyart.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/DogKnight/Prefab/DogPolyart.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOVerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameOVerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Game OVer.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Game OVer.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stylized Brick Texture/Assets/Materials/Brick Wall L.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Stylized Brick Texture/Assets/Materials/Brick Wall L.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,10 +15,53 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Maze" />
+      </map>
+    </option>
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="yeet" />
+                    <option name="lastUsedInstant" value="1656785728" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="Maze" />
+                    <option name="lastUsedInstant" value="1656785718" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1656785711" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="wet-walls" />
+                    <option name="lastUsedInstant" value="1656758999" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="mixingMazeAndFight" />
+                    <option name="lastUsedInstant" value="1656758971" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/FlashlightBar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HealthBar.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,7 +91,17 @@
       <updated>1656239413199</updated>
       <workItem from="1656239423463" duration="1134000" />
       <workItem from="1656345374900" duration="27000" />
+      <workItem from="1656785029303" duration="267000" />
+      <workItem from="1656786532267" duration="1681000" />
     </task>
+    <task id="LOCAL-00001" summary="yeet">
+      <created>1656785740188</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656785740188</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -66,5 +122,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="yeet" />
+    <option name="LAST_COMMIT_MESSAGE" value="yeet" />
   </component>
 </project>
