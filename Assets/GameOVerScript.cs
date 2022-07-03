@@ -12,10 +12,8 @@ public class GameOverScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("nein");
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("HALLO");
             SceneManager.LoadScene("GG");
         }
           
