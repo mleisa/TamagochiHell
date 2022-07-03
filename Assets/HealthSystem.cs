@@ -30,7 +30,7 @@ public class HealthSystem : MonoBehaviour
             if(healthBar != null) healthBar.SetHealth(CurrentHealth);
         }
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             isDead = true;
         }

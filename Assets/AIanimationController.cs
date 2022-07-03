@@ -7,14 +7,15 @@ public class AIanimationController : MonoBehaviour
     private bool isWalking;
     public bool canAttack = false;
     private NavMeshAgent _agent;
-    [SerializeField] private FieldOfHearing fieldOfHearing;
-
+    // [SerializeField] private FieldOfHearing fieldOfHearing;
+    private HealthSystem healthSystem;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         _agent = GetComponentInParent<NavMeshAgent>();
-        fieldOfHearing = GetComponentInParent<FieldOfHearing>();
+        // fieldOfHearing = GetComponentInParent<FieldOfHearing>();
+        healthSystem = GetComponentInParent<HealthSystem>();
     }
 
     private void Update()
@@ -23,6 +24,11 @@ public class AIanimationController : MonoBehaviour
         animator.SetBool("isWalking", isWalking);
         
         animator.SetBool("canAttack", canAttack);
+
+        if (healthSystem.isDead)
+        {
+            animator.SetBool("isDead", healthSystem.isDead);
+        }
 
     }
 }

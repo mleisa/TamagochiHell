@@ -23,7 +23,6 @@ public class animationController : MonoBehaviour
         if (healthSystem.isDead)
         {
             animator.SetBool("isDead", healthSystem.isDead);
-            //enabled = false;
         }
         
         
