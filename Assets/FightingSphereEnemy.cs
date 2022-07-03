@@ -7,17 +7,26 @@ public class FightingSphereEnemy : MonoBehaviour
     [SerializeField] private HealthSystem playerHealth;
     private Coroutine coroutineFighting;
     [SerializeField] private AIanimationController AIanimationController;
+    private HealthSystem ownHealth;
 
     private void Start()
     {
         AIanimationController = GetComponentInChildren<AIanimationController>();
+        ownHealth = GetComponentInParent<HealthSystem>();
     }
 
     IEnumerator Attack(float delay)
     {
         while (playerHealth != null)
         {
+            if (ownHealth.isDead)
+            {
+                break;
+            }
+            
             yield return new WaitForSeconds(delay);
+
+            Debug.Log("Take That");
             playerHealth.TakeDamage(10);
         }
     }
@@ -34,7 +43,7 @@ public class FightingSphereEnemy : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !ownHealth.isDead)
         {
             playerHealth = null;
             AIanimationController.canAttack = false;

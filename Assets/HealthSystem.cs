@@ -3,16 +3,11 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField]
-    private float currentHealth;
-    
-    [SerializeField]
-    private float maxHealth = 100;
-
-    [SerializeField]
-    private HealthBar healthBar;
-
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float maxHealth = 100;
+    [SerializeField] private HealthBar healthBar;
     public bool isDead = false;
+    private GameOverScript gameOverScript;
 
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
@@ -20,6 +15,7 @@ public class HealthSystem : MonoBehaviour
     {
         CurrentHealth = maxHealth;
         if (healthBar != null) healthBar.SetMaxHealth(maxHealth);
+        gameOverScript = GetComponent<GameOverScript>();
     }
 
     public void TakeDamage(float number)
@@ -33,6 +29,11 @@ public class HealthSystem : MonoBehaviour
         if (currentHealth <= 0)
         {
             isDead = true;
+
+            if (gameObject.CompareTag("Player"))
+            {
+                gameOverScript.YouDied();
+            }
         }
     }
 }

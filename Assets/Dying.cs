@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Dying : MonoBehaviour
 {
-    [SerializeField] private HealthSystem gameObject;
+    [SerializeField] private HealthSystem healthSystem;
     void Start()
     {
-        gameObject = GetComponent<HealthSystem>();
+        healthSystem = GetComponent<HealthSystem>();
     }
 
     void Update()
     {
-        if (gameObject.isDead)
+        if (healthSystem.isDead)
         {
             MonoBehaviour[] comps = GetComponents<MonoBehaviour>();
             foreach (var component in comps)
