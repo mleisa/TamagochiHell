@@ -25,8 +25,7 @@ public class FightingSphereEnemy : MonoBehaviour
             }
             
             yield return new WaitForSeconds(delay);
-
-            Debug.Log("Take That");
+            
             playerHealth.TakeDamage(10);
         }
     }

@@ -9,7 +9,6 @@ public class LightController : MonoBehaviour
     {
         lights = GetComponentsInChildren<Light>();
         chargeLeft = GetComponent<LightCharge>();
-        Debug.Log(lights);
     }
 
     public void KillLights()
