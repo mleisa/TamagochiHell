@@ -8,6 +8,7 @@ public class AIController : MonoBehaviour
     private bool isChasing;
     [SerializeField] private FieldOfView fieldOfView;
     [SerializeField] private FieldOfHearing fieldOfHearing;
+    [SerializeField] private HealthSystem healthSystem;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class AIController : MonoBehaviour
         aiFollow = GetComponent<AIFollow>();
         fieldOfView = GetComponent<FieldOfView>();
         fieldOfHearing = GetComponent<FieldOfHearing>();
+        healthSystem = GetComponent<HealthSystem>();
 
         followPathing.enabled = true;
         isChasing = false;
@@ -22,6 +24,14 @@ public class AIController : MonoBehaviour
 
     private void Update()
     {
+        if (healthSystem.isDead)
+        {
+            //gameObject.SetActive(false);
+            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponentInChildren<FightingSphereEnemy>().enabled = false;
+            return;
+        }
+        
         TargetCheckUp();
     }
 

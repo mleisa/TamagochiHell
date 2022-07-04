@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
+    public void YouDied()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
+
     public void Retry()
     {
         SceneManager.LoadScene("SampleScene");
@@ -12,10 +16,8 @@ public class GameOverScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("nein");
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Finish"))
         {
-            Debug.Log("HALLO");
             SceneManager.LoadScene("GG");
         }
           

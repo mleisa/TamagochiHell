@@ -3,10 +3,12 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] FightingSphere fightingSphere;
+    [SerializeField] private LightCharge lightCharge;
 
     private void Awake()
     {
         fightingSphere = gameObject.GetComponentInChildren<FightingSphere>();
+        lightCharge = GetComponent<LightCharge>();
     }
 
     private void FixedUpdate()
@@ -17,6 +19,7 @@ public class Attack : MonoBehaviour
             {
                 HealthSystem enemyHealth = narc.GetComponent<HealthSystem>();
                 enemyHealth.TakeDamage(100);
+                lightCharge.DecreaseFromHit();
             }
         }
     }
