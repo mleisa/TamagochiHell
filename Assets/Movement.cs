@@ -22,7 +22,6 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        // Obtain the reference to our Rigidbody.
         body = GetComponent<Rigidbody>();
     }
 

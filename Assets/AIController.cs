@@ -26,7 +26,6 @@ public class AIController : MonoBehaviour
     {
         if (healthSystem.isDead)
         {
-            //gameObject.SetActive(false);
             GetComponent<CapsuleCollider>().enabled = false;
             GetComponentInChildren<FightingSphereEnemy>().enabled = false;
             return;

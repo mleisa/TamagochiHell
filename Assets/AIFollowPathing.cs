@@ -41,11 +41,4 @@ public class AIFollowPathing : MonoBehaviour
             agent.destination = _transform[nodeIndex].position;
         }
     }
-
-    // public bool TargetReached()
-    // {
-    //     // Debug.Log(Vector3.Distance(transform.position, _transform[nodeIndex].position));
-    //     // return agent.destination.x == _transform[nodeIndex].position.x;
-    //     return Vector3.Distance(transform.position, _transform[nodeIndex].position) < 1;
-    // }
 }
